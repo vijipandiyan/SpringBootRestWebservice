@@ -1,16 +1,21 @@
 package core.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Employee")
-public class Employee {
+public class Employee implements Serializable {
 
-	 	@Id
-	  //  @GeneratedValue(strategy = GenerationType.AUTO)
+	 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+		@Id
+	    @GeneratedValue(strategy = GenerationType.AUTO)
+		@JsonIgnoreProperties
 	    private long id;
 	    private String name;
 
