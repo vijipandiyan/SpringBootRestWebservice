@@ -11,16 +11,19 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Maya/Downloads/spring-boot-maven-plugin-1.5.7.RELEASE.jar"/>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="welcome/|controller/|dao/|model/|service/|controller/|dao/|model/|service/" kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+	<classpathentry kind="lib" path="C:/Users/Maya/.m2/repository/org/springframework/spring-jdbc/4.3.11.RELEASE/spring-jdbc-4.3.11.RELEASE.jar">
 		<attributes>
-			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-jdbc"/>
+			<attribute name="maven.version" value="4.3.11.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

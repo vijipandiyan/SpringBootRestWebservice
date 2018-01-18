@@ -1,3 +1,7 @@
-C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\welcome\GreetingController.java
-C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\welcome\Application.java
-C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\welcome\Greeting.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\Application.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\service\EmployeeService.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\controller\EmployeeController.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\service\EmployeeServiceImpl.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\model\Employee.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\repositories\EmployeeRepository.java
+C:\Users\Maya\eclipse-workspace\MavenSpringWebService\src\main\java\core\dao\EmployeeDao.java
