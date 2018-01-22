@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import core.model.Address;
 import core.model.Employee;
 import core.repositories.EmployeeRepository;
 import core.service.EmployeeService;
@@ -64,6 +66,18 @@ public class EmployeeController {
         if(emp == null) {
             return ResponseEntity.notFound().build();
         }
+
+        return ResponseEntity.ok().body(emp);
+    }
+    
+    @GetMapping("/add/{id}")
+    public ResponseEntity<Employee> getEmployeeAdrressById(@PathVariable(value = "id") Long id) {
+        Employee emp = empRepo.findOne(id);
+        if(emp == null) {
+            return ResponseEntity.notFound().build();
+        }
+        
+        emp.setAddress(getEmployeeAdd(id));
         return ResponseEntity.ok().body(emp);
     }
     
@@ -74,7 +88,7 @@ public class EmployeeController {
         if(emp == null) {
             return ResponseEntity.notFound().build();
         }
-        emp.setId(empDetails.getId());
+        emp.setEmpId(empDetails.getEmpId());
         emp.setName(empDetails.getName());
 
         Employee updatedEmp = empRepo.save(emp);
@@ -90,6 +104,15 @@ public class EmployeeController {
 
         empRepo.delete(emp);
         return ResponseEntity.ok().build();
+    }
+    
+    
+    public Address getEmployeeAdd(long empid) {
+    	
+    	RestTemplate restTemplate = new RestTemplate();
+    	
+    	return (restTemplate.getForObject("http://localhost:8090/address/emp/"+empid, Address.class));
+    	
     }
     
 }

@@ -16,24 +16,34 @@ public class Employee implements Serializable {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 		@JsonIgnoreProperties
-	    private long id;
-	    private String name;
+		@Column(name = "empid")
+	    private long empId;
+
+		private String name;
+		
+		private String department;
+		
+		private String company;
+		
+		private int salary;
+		@JsonIgnoreProperties
+		private Address address;
 
 	    public Employee(){}
 	    
-	    public Employee(long id, String name) {
-	        this.id = id;
+	    public Employee(long empId, String name) {
+	        this.empId = empId;
 	        this.name = name;
 	    }
 
-	    public long getId() {
-	        return id;
-	    }
-	    
-	    public void setId(long id) {
-	        this.id = id;
-	    }
 
+	    public long getEmpId() {
+			return empId;
+		}
+
+		public void setEmpId(long empId) {
+			this.empId = empId;
+		}
 	    public String getName() {
 	        return name;
 	    }
@@ -41,4 +51,36 @@ public class Employee implements Serializable {
 	    public void setName(String name) {
 	        this.name = name;
 	    }
+
+		public String getDepartment() {
+			return department;
+		}
+
+		public void setDepartment(String department) {
+			this.department = department;
+		}
+
+		public String getCompany() {
+			return company;
+		}
+
+		public void setCompany(String company) {
+			this.company = company;
+		}
+
+		public int getSalary() {
+			return salary;
+		}
+
+		public void setSalary(int salary) {
+			this.salary = salary;
+		}
+
+		public Address getAddress() {
+			return address;
+		}
+
+		public void setAddress(Address address) {
+			this.address = address;
+		}
 }
